@@ -79,7 +79,7 @@ lcp-echo-interval 30
 lcp-echo-failure 4
 ```
 
-Закрываем этот файл и сохраняем. Далее открываем файл nano /etc/xl2tpd/xl2tpd.conf 
+Сохраняемся и выходим из файла. Далее открываем файл nano /etc/xl2tpd/xl2tpd.conf 
 
 Общие настройки находяися в секции global:
 
@@ -111,6 +111,9 @@ refuse pap = yes
 refuse chap = yes
 pppoptfile = /etc/ppp/options.xl2tpd
 ```
+
+Сохраняем и закрываем файл.
+
 
 ## Шаг 5. Настройка данных пользователя
 
