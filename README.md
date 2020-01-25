@@ -5,7 +5,9 @@ Client - Ubuntu 18.04
 
 ## Шаг 1. Установка StrongSwan и xl2tpd
 
+StrongSwan является демоном IPSEC, который мы настроим как наш VPN-сервер
 Обновим пакеты и установим нужные компоненты:
+
 ```
 apt-get update
 apt-get install strongswan xl2tpd
@@ -77,7 +79,9 @@ lcp-echo-interval 30
 lcp-echo-failure 4
 ```
 
-Закрываем этот файл и сохраняем. Далее открываем файл nano /etc/xl2tpd/xl2tpd.conf и вставляем следующий код:
+Закрываем этот файл и сохраняем. Далее открываем файл nano /etc/xl2tpd/xl2tpd.conf 
+
+Общие настройки находяися в секции global:
 
 ```
 [global]
@@ -90,7 +94,11 @@ access control = no
 rand source = dev
 port = 1701
 auth file = /etc/ppp/chap-secrets
+```
 
+Настройки сервера находятся в секции lns:
+
+```
 [lns default]
 ip range = 192.168.1.10-192.168.122.20
 local ip = 192.168.1.1
@@ -113,15 +121,22 @@ test    l2tpd     TestTest      "*"
 ```
 
 test - наш логин
+
 l2tpd - имя сервера, к которому можно подсоединиться (его можно заменить на *)
+
 TestTest - наш пароль
-* - Разрешает соединения с любых IP
+
+"*" - Разрешает соединения с любых IP
 
 ## Шаг 6. Запуск сервера
+
+Запускаем сервер командой:
 
 ```
 service xl2tpd start
 ```
+
+Наш VPN IPSec over L2TP настроен.
 
 
 
