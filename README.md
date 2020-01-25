@@ -1,16 +1,16 @@
 # Настройка IPSec over L2TP 
 Server - Ubuntu 16.04
 
-Client - Ubuntu 16.04
+Client - Ubuntu 18.04
 
-## Шаг 1. Установка StrongSwan
+## Шаг 1. Установка StrongSwan и xl2tpd
 
 Во-первых, мы установим StrongSwan, демон IPSec с открытым исходным кодом, который мы настроим как наш VPN-сервер. Мы также установим компонент инфраструктуры открытого ключа, чтобы мы могли создать центр сертификации.
 
 Обновим пакеты и установим нужные компоненты:
-
-    sudo apt update
-    sudo apt install strongswan strongswan-pki
+```
+apt-get install strongswan xl2tpd
+```
     
 ## Шаг 2. Создание центра сертификации
 
