@@ -80,7 +80,7 @@ lcp-echo-failure 4
 
 Сохраняемся и выходим из файла. Далее открываем файл nano /etc/xl2tpd/xl2tpd.conf 
 
-Общие настройки находяися в секции global:
+Общие настройки находятся в секции global:
 
 ```
 [global]
@@ -138,7 +138,7 @@ TestTest - наш пароль
 service xl2tpd start
 ```
 
-Наш VPN IPSec over L2TP настроен.
+Наш VPN IPSec over L2TP сервер настроен.
 
 
 
