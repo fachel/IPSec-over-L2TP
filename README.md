@@ -13,7 +13,7 @@ apt-get install strongswan xl2tpd
     
 ## Шаг 2. Конфигурация ipsec.conf
 
-Внесем изменения в конфигурационный файл:
+Внесем изменения в конфигурационный файл nano /etc/ipsec.conf
 ```
 conn L2TP-IPSEC
     authby=secret
@@ -52,7 +52,7 @@ ip_address %any : PSK "your_psk"
 
 ## Шаг 4. Настройка L2TP
 
-Внесём изменения в конфигурационный файл options (nano /etc/ppp/options.xl2tpd).
+Внесём изменения в конфигурационный файл nano /etc/ppp/options.xl2tpd
 
 ```
 require-mschap-v2
@@ -77,7 +77,7 @@ lcp-echo-interval 30
 lcp-echo-failure 4
 ```
 
-Закрываем этот файл и сохраняем. Далее открываем файл xl2tpd (nano /etc/xl2tpd/xl2tpd.conf) и вставляем следующий код:
+Закрываем этот файл и сохраняем. Далее открываем файл nano /etc/xl2tpd/xl2tpd.conf и вставляем следующий код:
 
 ```
 [global]
