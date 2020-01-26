@@ -3,7 +3,7 @@ Server - Ubuntu 16.04
 
 Client - Ubuntu 18.04
 
-## Настройка сервера L2TP 
+## Настройка сервера IPSec over L2TP 
 
 ### Шаг 1. Установка StrongSwan и xl2tpd
 
