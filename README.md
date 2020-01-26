@@ -16,7 +16,7 @@ apt-get install strongswan xl2tpd
     
 ### Шаг 2. Конфигурация ipsec.conf
 
-Внесем изменения в конфигурационный файл nano /etc/ipsec.conf
+Внесем изменения в конфигурационный файл /etc/ipsec.conf
 ```
 conn L2TP-IPSEC
     authby=secret
@@ -44,7 +44,7 @@ conn L2TP-IPSEC
 
 ### Шаг 3. Настройка Pre-Shared Key
 
-Настроим Pre-Shared Key, чтобы можно было подключиться к нашему VPN. Заходим в nano /etc/ipsec.secrets
+Настроим Pre-Shared Key, чтобы можно было подключиться к нашему VPN. Заходим в /etc/ipsec.secrets
 
 ```
 ip_address %any : PSK "your_psk"
@@ -55,7 +55,7 @@ ip_address %any : PSK "your_psk"
 
 ### Шаг 4. Настройка L2TP
 
-Внесём изменения в конфигурационный файл nano /etc/ppp/options.xl2tpd
+Внесём изменения в конфигурационный файл /etc/ppp/options.xl2tpd
 
 ```
 require-mschap-v2
@@ -80,7 +80,7 @@ lcp-echo-interval 30
 lcp-echo-failure 4
 ```
 
-Сохраняемся и выходим из файла. Далее открываем файл nano /etc/xl2tpd/xl2tpd.conf 
+Сохраняемся и выходим из файла. Далее открываем файл /etc/xl2tpd/xl2tpd.conf 
 
 Общие настройки находятся в секции global:
 
