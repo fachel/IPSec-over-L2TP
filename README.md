@@ -142,8 +142,27 @@ service xl2tpd start
 
 Наш VPN IPSec over L2TP сервер настроен.
 
+## Настройка клиента L2TP 
 
+### Шаг 1. Установка 
 
+Обновляем и устанавливаем следующие зависимости:
+
+```
+sudo apt-get update
+sudo apt-get install network-manager-l2tp
+sudo apt-get install network-manager-l2tp-gnome
+```
+
+### Шаг 2. Подключение
+
+Кликаем в верхнем правом углу на значок "network" и затем нажимаем на иконку настроек. 
+
+Нажимаем "+" добавить VPN и выбираем L2TP.
+В поле name пишем любое название нашего подключения. 
+В gateway вставляем адрес нашего сервера.
+В user и password пишем те данные, которые прописывали в файле chap-secrets сервера.
+Затем жмем на кнопку IPsec Settings. Ставим галочку "Enable IPsec tunnel to L2TP host" и в поле Pre-Shared Key пишем ключ, который мы задавали в файле ipsec.secrets сервера. Нажимаем везде "ok" и включаем VPN соединение. Клиент подключен.
 
 
 
